@@ -19,6 +19,7 @@ namespace Хаба
 	public partial class MainWindow : Window
 	{
 		Model model;
+		string sign;
 
 		public MainWindow()
 		{
@@ -26,12 +27,13 @@ namespace Хаба
 			model = new Model();
 		}
 
-		private void CalculateButton_Click(object sender, RoutedEventArgs e) // Получение значений
+		private void CalculateButton_Click(object sender, RoutedEventArgs e)
 		{
 			string text1 = Num1TextBox.Text.Trim();
 			string text2 = Num2TextBox.Text.Trim();
 			double num1 = 0;
 			double num2 = 0;
+			if (string.IsNullOrEmpty(text2)) text2 = "0";
 			if (!string.IsNullOrEmpty(text1) && !string.IsNullOrEmpty(text2))
 			{
 				try
@@ -42,11 +44,16 @@ namespace Хаба
 				catch (Exception exc) { }
 				Calculate(num1, num2);
 
-				ResultTextBlock.Text = model.result.ToString(); // Обновить viev
+				ResultTextBlock.Text = model.result.ToString();
 			}
 		}
+		public void ButonClick(object sender, RoutedEventArgs e)
+		{
+			sign = ((Button)sender).Content.ToString();
+			OperatorType.Text = sign;
+		}
 
-		public void Calculate(double num1, double num2) // Отправка знаений в модель
+		public void Calculate(double num1, double num2)
 		{
 			switch (OperatorType.Text)
 			{
@@ -71,8 +78,23 @@ namespace Хаба
 				case "log":
 					model.Log10(num1);
 					break;
-				case "Sqrt":
+				case "√x":
 					model.Sqrt(num1);
+					break;
+				case "ln":
+					model.Log(num1);
+					break;
+				case "|x|":
+					model.Abs(num1);
+					break;
+				case "sin":
+					model.Sin(num1);
+					break;
+				case "cos":
+					model.Cos(num1);
+					break;
+				case "tan":
+					model.Tan(num1);
 					break;
 
 			}

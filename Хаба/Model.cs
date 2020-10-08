@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Хаба
 {
@@ -36,14 +40,34 @@ namespace Хаба
 			result = Math.Pow(num1, num2);
 		}
 
-        internal void Log10(double num1)
-        {
+		public void Log10(double num1)
+		{
 			result = Math.Log10(num1);
-        }
+		}
 
-		internal void Sqrt(double num1)
+		public void Sqrt(double num1)
 		{
 			result = Math.Sqrt(num1);
+		}
+		public void Log(double num1)
+		{
+			result = Math.Log(num1);
+		}
+		public void Abs(double num1)
+		{
+			result = Math.Abs(num1);
+		}
+		public void Sin(double num1)
+		{
+			result = Math.Sin(num1);
+		}
+		public void Cos(double num1)
+		{
+			result = Math.Cos(num1);
+		}
+		public void Tan(double num1)
+		{
+			result = Math.Tan(num1);
 		}
 
 

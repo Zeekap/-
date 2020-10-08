@@ -19,7 +19,13 @@
                     <ComboBoxItem Content="^"/>
                     <ComboBoxItem Content="10^"/>
                     <ComboBoxItem Content="√x"/>
-                    
+                    <ComboBoxItem Content="Log"/>
+                    <ComboBoxItem Content="|x|"/>
+                    <ComboBoxItem Content="sin"/>
+                    <ComboBoxItem Content="cos"/>
+                    <ComboBoxItem Content="tan"/>
+
+
                 </ComboBox>
                 <TextBox Name="Num2TextBox" Margin="5" Width="50"/>
             </StackPanel>
